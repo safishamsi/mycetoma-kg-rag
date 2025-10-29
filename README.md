@@ -274,4 +274,4 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 **Version:** 1.0.0  
 **Last Updated:** October 2025  
-**Status:** Accepted at MICAD 2025
+**Status:** Under Review at MICAD 2025
