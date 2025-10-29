@@ -5,7 +5,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10+-orange.svg)](https://www.tensorflow.org/)
 
-Official implementation of **"Multi-Modal Knowledge Graph-Augmented Retrieval for Explainable Mycetoma Diagnosis"** accepted at MICAD 2025.
+Official implementation of **"Multi-Modal Knowledge Graph-Augmented Retrieval for Explainable Mycetoma Diagnosis"** submitted at MICAD 2025.
 
 **Authors:** Safi Shamsi¹, Laraib Hasan¹, Azizur Rahman¹, Paras Nigam²
 
