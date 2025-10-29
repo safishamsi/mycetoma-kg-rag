@@ -1,0 +1,256 @@
+# Main Configuration File for Mycetoma KG-RAG System
+
+# Project Info
+project:
+  name: "mycetoma-kg-rag"
+  version: "1.0.0"
+  description: "Multi-Modal Knowledge Graph-Augmented Retrieval for Explainable Mycetoma Diagnosis"
+
+# Paths
+paths:
+  data_root: "data/"
+  images_dir: "data/images/"
+  kg_data: "data/kg/"
+  checkpoints: "checkpoints/"
+  results: "results/"
+  logs: "logs/"
+  cache: ".cache/"
+
+# Device Configuration
+device:
+  use_cuda: true  # Use GPU if available
+  gpu_id: 0
+  num_workers: 4
+  pin_memory: true
+
+# Neo4j Configuration
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "${NEO4J_PASSWORD}"  # Set via environment variable
+  database: "mycetoma"
+  max_connection_lifetime: 3600
+  max_connection_pool_size: 50
+  connection_timeout: 30
+
+# OpenAI Configuration (for RAG explanations)
+openai:
+  api_key: "${OPENAI_API_KEY}"  # Set via environment variable
+  model: "gpt-4"
+  temperature: 0.3
+  max_tokens: 500
+  top_p: 1.0
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+
+# Model Configuration
+model:
+  architecture: "inception_v3"
+  num_classes: 2
+  class_names: ["Actinomycetoma", "Eumycetoma"]
+  pretrained: true
+  input_size: 299
+  feature_dim: 2048
+  dropout: 0.2
+
+# Training Configuration
+training:
+  batch_size: 32
+  num_epochs: 50
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  optimizer: "adam"
+  momentum: 0.9  # For SGD
+  scheduler:
+    type: "step"
+    step_size: 10
+    gamma: 0.1
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.001
+  gradient_clipping:
+    enabled: true
+    max_norm: 1.0
+  
+# Data Configuration
+data:
+  train_split: 0.70  # 478 images
+  val_split: 0.15    # 103 images
+  test_split: 0.15   # 103 images
+  random_seed: 42
+  shuffle: true
+  
+  # Data Augmentation
+  augmentation:
+    train:
+      random_horizontal_flip: true
+      random_vertical_flip: true
+      random_rotation: 15
+      color_jitter:
+        brightness: 0.2
+        contrast: 0.2
+        saturation: 0.1
+        hue: 0.05
+      random_crop: true
+      normalize: true
+    val:
+      center_crop: true
+      normalize: true
+    test:
+      center_crop: true
+      normalize: true
+  
+  # ImageNet normalization
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+# Knowledge Graph Configuration
+knowledge_graph:
+  enable: true
+  
+  # Expected entity counts (from paper Table 1)
+  expected_entities:
+    total: 5247
+    patients: 684
+    images: 684
+    clinical_notes: 412
+    lab_results: 287
+    locations: 89
+    pathogens: 50
+    diseases: 10
+    drugs: 100
+    literature: 2091
+  
+  # Expected relationship counts
+  expected_relationships:
+    total: 15832
+  
+  # Feature extraction
+  features:
+    extraction_batch_size: 16
+    cache_features: true
+    feature_cache_path: "data/features/image_features.npy"
+
+# Multi-Modal Retrieval Configuration
+retrieval:
+  # Visual similarity retrieval
+  visual:
+    enabled: true
+    k: 10  # Retrieve top-k similar images
+    weight: 0.35
+    similarity_metric: "cosine"
+    min_similarity: 0.5
+  
+  # Clinical text retrieval
+  clinical:
+    enabled: true
+    k: 10
+    weight: 0.20
+    similarity_metric: "text_overlap"  # or "embedding"
+    use_embeddings: false  # Set true to use PubMedBERT
+  
+  # Laboratory confirmation retrieval
+  lab:
+    enabled: true
+    weight: 0.30
+    exact_match: true
+    require_confirmation: false
+  
+  # Geographic epidemiology retrieval
+  geographic:
+    enabled: true
+    weight: 0.10
+    use_regional_priors: true
+  
+  # Literature retrieval
+  literature:
+    enabled: true
+    k: 5
+    weight: 0.05
+    search_method: "keyword"  # or "semantic"
+
+# Evidence Aggregation Configuration
+aggregation:
+  method: "weighted_fusion"
+  normalize_weights: true
+  confidence_calibration:
+    enabled: true
+    method: "temperature_scaling"
+    temperature: 1.5
+
+# RAG Explanation Configuration
+rag:
+  enabled: true
+  max_retries: 3
+  timeout: 30
+  cache_explanations: true
+  
+  # Prompt engineering
+  prompt:
+    system_role: "expert_pathologist"
+    include_evidence_counts: true
+    include_confidence: true
+    max_context_length: 3000
+    
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "roc_auc"
+    - "matthews_corrcoef"
+    - "confusion_matrix"
+  
+  # Save outputs
+  save_predictions: true
+  save_probabilities: true
+  save_explanations: true
+  save_retrieved_evidence: true
+  
+  # Ablation study
+  ablation:
+    run_ablation: false
+    modalities_to_ablate:
+      - "visual"
+      - "clinical"
+      - "lab"
+      - "geographic"
+      - "literature"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file: "logs/mycetoma_kg_rag.log"
+  console: true
+  
+  # Weights & Biases (wandb)
+  wandb:
+    enabled: false
+    project: "mycetoma-kg-rag"
+    entity: "your-username"
+    name: "experiment-1"
+    tags: ["kg-rag", "mycetoma", "medical-ai"]
+  
+  # TensorBoard
+  tensorboard:
+    enabled: false
+    log_dir: "runs/"
+
+# Reproducibility
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false  # Set true for faster training (less reproducible)
+
+# Performance
+performance:
+  mixed_precision: false  # Set true for faster training on modern GPUs
+  compile_model: false  # PyTorch 2.0+ only
+  prefetch_factor: 2
+  persistent_workers: true

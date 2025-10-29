@@ -1,0 +1,212 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Data files (too large for git)
+data/raw/
+data/processed/
+data/images/
+data/features/
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Model checkpoints (use Git LFS or external storage)
+checkpoints/*.pth
+checkpoints/*.pt
+checkpoints/*.ckpt
+*.weights
+*.model
+
+# Neo4j database files
+neo4j_data/
+*.db/
+graph.db/
+
+# Logs
+logs/
+*.log
+wandb/
+tensorboard_logs/
+runs/
+
+# Results (optional - you might want to commit some)
+results/predictions/
+results/visualizations/
+experiments/results/*/predictions/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# API Keys & Secrets
+.env
+.env.local
+.env.*.local
+config/secrets.yaml
+config/local_config.yaml
+*.key
+*.pem
+secrets/
+
+# OS-specific
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Large result files
+*.csv.gz
+*.json.gz
+
+# Exclude sample data but keep structure
+!data/sample/
+!data/sample/**/*.jpg

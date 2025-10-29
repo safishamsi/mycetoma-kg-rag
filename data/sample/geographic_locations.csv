@@ -1,0 +1,16 @@
+location,country,region,latitude,longitude,actino_prevalence,eumy_prevalence,total_cases,climate,endemic_level,vegetation_type
+Khartoum,Sudan,North Africa,15.5007,32.5599,25,75,1200,Arid,Very High,Acacia
+Dakar,Senegal,West Africa,14.6937,-17.4441,40,60,450,Tropical,High,Mixed
+Juba,South Sudan,East Africa,4.8517,31.5825,30,70,320,Tropical,High,Savanna
+Port Sudan,Sudan,North Africa,19.6158,37.2165,28,72,180,Arid,High,Acacia
+Kassala,Sudan,East Africa,15.4500,36.4000,24,76,280,Semi-arid,Very High,Acacia
+Gedaref,Sudan,East Africa,14.0352,35.3815,30,70,220,Semi-arid,High,Acacia
+Sennar,Sudan,North Africa,13.5500,33.6000,22,78,160,Semi-arid,High,Acacia
+Mexico City,Mexico,Central America,19.4326,-99.1332,70,30,280,Temperate,Moderate,Mixed
+Barranquilla,Colombia,South America,10.9685,-74.7813,65,35,150,Tropical,Moderate,Tropical
+Khammam,India,South Asia,17.2473,80.1514,45,55,210,Tropical,High,Mixed
+Rajasthan,India,South Asia,27.0238,74.2179,50,50,320,Arid,High,Desert
+Mauritania,Mauritania,West Africa,20.2540,-10.9408,35,65,180,Arid,High,Acacia
+Somalia,Somalia,East Africa,5.1521,46.1996,28,72,350,Arid,Very High,Acacia
+Yemen,Yemen,Middle East,15.5527,48.5164,40,60,240,Arid,High,Acacia
+Venezuela,Venezuela,South America,6.4238,-66.5897,68,32,120,Tropical,Moderate,Tropical

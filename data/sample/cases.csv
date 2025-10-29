@@ -1,0 +1,11 @@
+case_id,age,gender,location,country,diagnosis,onset_date,anatomical_site,disease_duration_months,trauma_history,family_history,has_sinuses,grain_color,previous_surgery,previous_treatment,image_id
+CASE_001,35,Male,Khartoum,Sudan,Eumycetoma,2021-03-15,Foot,18,Yes,No,Yes,Black,No,No,IMG_001
+CASE_002,42,Female,Dakar,Senegal,Actinomycetoma,2020-11-20,Hand,12,Yes,No,Yes,Yellow,Yes,No,IMG_002
+CASE_003,28,Male,Juba,South Sudan,Eumycetoma,2019-05-10,Lower leg,36,No,Yes,Yes,Black,Yes,No,IMG_003
+CASE_004,31,Male,Khartoum,Sudan,Eumycetoma,2022-01-08,Foot,14,Yes,No,Yes,Black,No,No,IMG_004
+CASE_005,45,Male,Port Sudan,Sudan,Actinomycetoma,2021-07-22,Forearm,20,Yes,No,Yes,White,No,Yes,IMG_005
+CASE_006,25,Female,Kassala,Sudan,Eumycetoma,2020-09-15,Foot,24,No,No,Yes,Black,Yes,No,IMG_006
+CASE_007,38,Male,Gedaref,Sudan,Actinomycetoma,2021-12-03,Hand,16,Yes,No,Yes,Red,No,No,IMG_007
+CASE_008,29,Male,Khartoum,Sudan,Eumycetoma,2020-06-18,Knee,30,Yes,Yes,Yes,Black,Yes,No,IMG_008
+CASE_009,52,Male,Sennar,Sudan,Eumycetoma,2019-02-25,Lower leg,48,No,No,Yes,Black,Yes,Yes,IMG_009
+CASE_010,33,Female,Khartoum,Sudan,Actinomycetoma,2021-10-11,Foot,15,Yes,No,Yes,Yellow,No,No,IMG_010

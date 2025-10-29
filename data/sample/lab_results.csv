@@ -1,0 +1,11 @@
+lab_id,case_id,confirmed_pathogen,pathogen_type,method,confirmation_date,susceptibility,grain_culture_days,pcr_result,histopathology_result
+LAB_001,CASE_001,Madurella mycetomatis,Fungal,Culture,2021-04-15,Itraconazole-sensitive,21,Positive,Consistent
+LAB_002,CASE_005,Nocardia brasiliensis,Bacterial,Culture+PCR,2021-08-15,Trimethoprim-sensitive,14,Positive,Consistent
+LAB_003,CASE_007,Actinomadura madurae,Bacterial,Culture,2022-01-05,Streptomycin-sensitive,18,Positive,Consistent
+LAB_004,CASE_003,Madurella mycetomatis,Fungal,PCR+Histopathology,2019-06-12,Itraconazole-sensitive,NA,Positive,Consistent
+LAB_005,CASE_004,Madurella mycetomatis,Fungal,Culture,2022-02-08,Itraconazole-sensitive,25,Positive,Consistent
+LAB_006,CASE_006,Scedosporium apiospermum,Fungal,Culture+PCR,2020-10-20,Voriconazole-sensitive,28,Positive,Consistent
+LAB_007,CASE_008,Madurella mycetomatis,Fungal,Culture,2020-07-25,Itraconazole-sensitive,22,Positive,Consistent
+LAB_008,CASE_009,Madurella grisea,Fungal,Culture+Histopathology,2019-04-01,Itraconazole-resistant,30,Positive,Consistent
+LAB_009,CASE_002,Streptomyces somaliensis,Bacterial,Culture+PCR,2020-12-25,Co-trimoxazole-sensitive,16,Positive,Consistent
+LAB_010,CASE_010,Actinomadura pelletieri,Bacterial,PCR,2021-11-15,Amikacin-sensitive,NA,Positive,Presumptive
