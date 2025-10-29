@@ -265,7 +265,6 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 ## Related Resources
 
-- **Paper (arXiv):** [arXiv:2025.xxxxx](https://arxiv.org/abs/2025.xxxxx)
 - **Conference:** MICAD 2025
 - **Code Repository:** https://github.com/safishamsi/mycetoma-kg-rag
 - **Dataset Information:** Contact Mycetoma Research Centre, Khartoum, Sudan
